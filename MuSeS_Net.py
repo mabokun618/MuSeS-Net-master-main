@@ -67,7 +67,7 @@ class SEAM(nn.Module):
         return x
 
 # Hierarchical Pooling and Refinement Module
-class HPRM(nn.Module): # pspnet中的金字塔池化模块
+class HPRM(nn.Module):
     def __init__(self,inchannel, down_dim):
         super(HPRM, self).__init__()
         self.down_conv = nn.Sequential(
@@ -114,4 +114,5 @@ class MuSeS(nn.Module):
         x = x.mean(dim=(2, 3))
         out = self.fc(x)
         return out
+
 
